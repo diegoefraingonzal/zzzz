@@ -1,3 +1,67 @@
-<p>
-  formulario works!
-</p>
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title class="tituloo">Examen parcial 1</ion-title>
+  </ion-toolbar>
+ </ion-header>
+ 
+ 
+ <ion-content class="estilo" padding>
+  <h2>Escribe tus pelis </h2>
+ 
+ 
+ 
+ 
+  <input #NameInput type="text" placeholder="Cual es el nombre?" />
+  <input #YearInput type="number" placeholder="Que año salio?" />
+  <input #ProductorInput type="text" placeholder="Nombre del que produce" />
+  <input #CasaInput type="text" placeholder="Editorial" />
+  <input #ProtaInput type="text" placeholder="Personaje" />
+ 
+ 
+  <button
+    (click)="addEvent(
+      NameInput.value,
+      YearInput.value,
+      ProductorInput.value,
+      CasaInput.value,
+      ProtaInput.value
+    );
+    NameInput.value = '';
+    YearInput.value = '';
+    ProductorInput.value = '';
+    CasaInput.value = '';
+    ProtaInput.value = ''"
+  >
+    Registro de la pelis
+  </button>
+ 
+ 
+ 
+ 
+  <table class="tablita" border="1" style="margin-top: 20px; width: 100%; text-align: left">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre de película</th>
+        <th>Año de lanzamiento</th>
+        <th>Nombre de productora</th>
+        <th>Casa productora</th>
+        <th>Protagonista</th>
+   
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>{{ event.id }}</td>
+        <td>{{ event.Name }}</td>
+        <td>{{ event.Year }}</td>
+        <td>{{ event.Productor }}</td>
+        <td>{{ event.Casa }}</td>
+        <td>{{ event.Prota }}</td>
+       
+       
+      </tr>
+    </tbody>
+  </table>
+ </ion-content>
+ 
