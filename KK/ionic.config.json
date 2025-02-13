@@ -1,0 +1,7 @@
+{
+  "name": "KK",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
